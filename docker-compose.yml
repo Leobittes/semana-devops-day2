@@ -1,0 +1,17 @@
+services:
+  launchstore:
+    build: .
+    image: lounchstore-semana-devops-day2
+    ports:
+      - 80:80
+    container_name: launchstore  
+
+# DOCKER RUN -D -P 5432:5432 -E POSTGRES_PASSWORD=password postgres
+  postgres:
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=password
+    container_name: postgres  
+    
